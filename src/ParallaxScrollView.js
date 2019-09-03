@@ -8,6 +8,7 @@ import {
   Animated,
   ScrollView
 } from 'react-native';
+import SafeAreaView from 'react-native-safe-area-view';
 
 import { Icon, List, ListItem } from 'react-native-elements';
 
@@ -286,7 +287,7 @@ export default class ParallaxScrollView extends Component {
     const { style, ...props } = this.props;
 
     return (
-      <View style={[styles.container, style]}>
+      <SafeAreaView style={[styles.container, style]}>
         {this.renderBackground()}
         {this.rendernavBar()}
         <ScrollView
@@ -305,7 +306,7 @@ export default class ParallaxScrollView extends Component {
             {this.props.children || this.renderTodoListContent()}
           </View>
         </ScrollView>
-      </View>
+      </SafeAreaView>
     );
   }
 }
