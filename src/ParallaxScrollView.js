@@ -118,7 +118,7 @@ export default class ParallaxScrollView extends Component {
   }
 
   renderNavBarTitle() {
-    const { windowHeight, backgroundSource, navBarTitleColor, navBarTitleComponent } = this.props;
+    const { windowHeight, backgroundSource, navBarTitleComponent , navBarTitleStyle} = this.props;
     const { scrollY } = this.state;
     if (!windowHeight || !backgroundSource) {
       return null;
@@ -134,7 +134,7 @@ export default class ParallaxScrollView extends Component {
         }}
       >
         {navBarTitleComponent ||
-          <Text style={{ fontSize: 18, fontWeight: '600', color: navBarTitleColor || 'white' }}>
+          <Text style={navBarTitleStyle}>
             {this.props.navBarTitle || USER.name}
           </Text>}
       </Animated.View>
